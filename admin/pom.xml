@@ -19,7 +19,180 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
 
+        <!--    基础架包    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>2.0.1.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-autoconfigure</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot-starter</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-context</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-core</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jackson-datatype-jsr310</artifactId>
+                    <groupId>com.fasterxml.jackson.datatype</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jackson-databind</artifactId>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.15</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-codec</artifactId>
+                    <groupId>commons-codec</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--    以上 基础架包    -->
+
+        <!--    引用 common 的配置    -->
+        <dependency>
+            <groupId>com.tutu</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.validation</groupId>
+                    <artifactId>validation-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jackson-annotations</artifactId>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-context</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-aop</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--    分页插件    -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.3</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mybatis-spring-boot-starter</artifactId>
+                    <groupId>org.mybatis.spring.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot-starter</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot-autoconfigure</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--    以上 分页插件    -->
+
+
+        <!--    七牛云架包    -->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.2.23</version>
+        </dependency>
+
+        <!--    引用 dubbo    -->
+        <dependency>
+            <groupId>com.alibaba.spring.boot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>2.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-actuator</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-context</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-beans</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-web</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--    以上 引用 dubbo    -->
+
+        <dependency>
+            <groupId>cn.bestwu</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.27</version>
+        </dependency>
+
+
+    </dependencies>
 
 
     <build>
