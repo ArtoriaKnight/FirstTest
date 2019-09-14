@@ -1,0 +1,46 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: dubbo-tutu-server
+  druid:
+    driverClassName: com.mysql.jdbc.Driver
+    url:
+    username: root
+    password: Hjy930830!
+
+    maxActive: 30
+    minIdle: 5
+    maxWait: 10000
+    validationQuery: SELECT 'X'
+
+  dubbo:
+    server: true
+    registry: redis://192.168.16.110:6379
+    consumer:
+      timeout: 20000
+    protocol: 20881
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+
+redis:
+  ip: localhost
+  port: 6379
+  password:
+  random-db-num: 15
+  enable-random:
+    parts: true
+    testing: false
+
+batch:
+  import:
+    thread-num: 10
